@@ -1,14 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Document</title>
-</head>
-<body>
- 
-<script src="script.js"></script>   
-</body>
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <a href="" id="titre">LES WIDGETS</a>
+
+        <div class="icones">
+          <a href="#page_meteo" class="titre_nav"
+            ><i class="fas fa-cloud-sun"></i
+          ></a>
+          <a href="#page_calculatrice" class="titre_nav"
+            ><i class="fas fa-calculator"></i
+          ></a>
+          <a href="#page_convertisseur" class="titre_nav"
+            ><i class="fas fa-balance-scale"></i
+          ></a>
+          <a href="#page_fete" class="titre_nav"
+            ><i class="fas fa-calendar-alt"></i
+          ></a>
+        </div>
+
+        <!-- menu burger mobile-->
+        <div class="menu_burger">
+          <input id="menu-checkbox" type="checkbox" class="menu-checkbox" />
+          <label for="menu-checkbox" class="btn-burger"
+            ><i class="fas fa-hamburger"></i
+          ></label>
+          <ul class="dropdown">
+            <li><a href="" class="list-burger">Widget météo</a></li>
+            <li><a href="" class="list-burger">Widget calculatrice</a></li>
+            <li><a href="" class="list-burger">Widget convertisseur</a></li>
+            <li><a href="" class="list-burger">Widget fête du jour</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- VERSION DESKTOP CARROUSSEL -->
+
+      <ul class="gallery">
+        <!-- WIDGET METEO-->
+
+        <li style="background: #82a39b" id="page_meteo"></li>
+
+        <!-- WIDGET CALCULATRICE -->
+
+        <li style="background: #f1ba60" id="page_calculatrice">
+            <div id="back">
+              <div class="ecran">
+                <div id="show_wrapper">
+                  <form name="cal">
+                    <input id="show" type="text" name="input" autocomplete="off"/>
+                  </form>
+                </div>
+              </div>
+              <div id="buttons_wrapper">
+                <button onClick="cal.input.value+=9" class="numbers">9</button>
+                <button onClick="cal.input.value+=8" class="numbers">8</button>
+                <button onClick="cal.input.value+=7" class="numbers">7</button>
+                <button onClick="cal.input.value+='+'" class="numbers btn-calcul">+</button>
+                <br />
+                <button onClick="cal.input.value+=6" class="numbers">6</button>
+                <button onClick="cal.input.value+=5" class="numbers">5</button>
+                <button onClick="cal.input.value+=4" class="numbers">4</button>
+                <button onClick="cal.input.value+='-'" class="numbers btn-calcul">-</button>
+                <br />
+                <button onClick="cal.input.value+=3" class="numbers">3</button>
+                <button onClick="cal.input.value+=2" class="numbers">2</button>
+                <button onClick="cal.input.value+=1" class="numbers">1</button>
+                <button onClick="cal.input.value+='*'" class="numbers btn-calcul">x</button>
+                <br />
+                <button onClick="cal.input.value=''" class="numbers retour">C</button>
+                <button onClick="cal.input.value+=0" class="numbers">0</button>
+                <button id="result" class="numbers">=</button>
+                <button onClick="cal.input.value=+'/'" class="numbers btn-calcul">÷</button>
+              </div>
+            </div>
+        </li>
+
+        <!-- WIDGET CONVERTISSEUR -->
+
+        <li style="background: #d6595b" id="page_convertisseur"></li>
+
+        <!-- WIDGET FETE -->
+
+        <li style="background: #d6b79a" id="page_fete"></li>
+      </ul>
+
+      <!-- VERSION MOBILE -->
+
+      <section class="logo_tel">
+        <div id="accueil_1_tel">
+          <i class="fas fa-cloud-sun"></i>
+          <i class="fas fa-calculator"></i>
+        </div>
+
+        <div id="accueil_2_tel">
+          <i class="fas fa-balance-scale"></i>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+      </section>
+    </main>
+
+    <script type="text/Javascript" src="script.js"></script>
+  </body>
 </html>
