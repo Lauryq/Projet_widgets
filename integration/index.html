@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,9 +12,10 @@
     <title>Document</title>
   </head>
   <body>
+
     <header>
       <nav class="nav_bar">
-        <a href="" id="titre">LES WIDGETS</a>
+        <a href="index.html" id="titre">LES WIDGETS</a>
 
         <div class="icones">
           <a href="#page_meteo" class="titre_nav"
@@ -38,10 +39,10 @@
             ><i class="fas fa-hamburger"></i
           ></label>
           <ul class="dropdown">
-            <li><a href="" class="list-burger">Widget météo</a></li>
-            <li><a href="" class="list-burger">Widget calculatrice</a></li>
-            <li><a href="" class="list-burger">Widget convertisseur</a></li>
-            <li><a href="" class="list-burger">Widget fête du jour</a></li>
+            <li><a href="mobile1.html" class="list-burger">Widget météo</a></li>
+            <li><a href="mobile2.html" class="list-burger">Widget calculatrice</a></li>
+            <li><a href="mobile3.html" class="list-burger">Widget convertisseur</a></li>
+            <li><a href="mobile4.html" class="list-burger">Widget fête du jour</a></li>
           </ul>
         </div>
       </nav>
@@ -53,11 +54,14 @@
       <ul class="gallery">
         <!-- WIDGET METEO-->
 
-        <li style="background: #82a39b" id="page_meteo"></li>
+        <li class="page_carroussel" style="background: #82a39b" id="page_meteo">
+        
+        
+        </li>
 
         <!-- WIDGET CALCULATRICE -->
 
-        <li style="background: #f1ba60" id="page_calculatrice">
+        <li class="page_carroussel" style="background: #f1ba60" id="page_calculatrice">
             <div id="back">
               <div class="ecran">
                 <div id="show_wrapper">
@@ -92,24 +96,25 @@
 
         <!-- WIDGET CONVERTISSEUR -->
 
-        <li style="background: #d6595b" id="page_convertisseur"></li>
+        <li class="page_carroussel" style="background: #d6595b" id="page_convertisseur"></li>
 
         <!-- WIDGET FETE -->
 
-        <li style="background: #d6b79a" id="page_fete"></li>
+        <li class="page_carroussel" style="background: #d6b79a" id="page_fete"></li>
       </ul>
 
       <!-- VERSION MOBILE -->
 
+      <!-- PAGE LOGO -->
       <section class="logo_tel">
         <div id="accueil_1_tel">
-          <i class="fas fa-cloud-sun"></i>
-          <i class="fas fa-calculator"></i>
+          <a href="mobile1.html"><i class="fas fa-cloud-sun"></i></a>
+          <a href="mobile2.html"><i class="fas fa-calculator"></i></a>
         </div>
 
         <div id="accueil_2_tel">
-          <i class="fas fa-balance-scale"></i>
-          <i class="fas fa-calendar-alt"></i>
+          <a href="mobile3.html"><i class="fas fa-balance-scale"></i></a>
+          <a href="mobile4.html"><i class="fas fa-calendar-alt"></i></a>
         </div>
       </section>
     </main>
