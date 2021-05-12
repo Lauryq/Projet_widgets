@@ -1,11 +1,6 @@
 * {
-  margin:0;
+  margin: 0;
   padding: 0;
-}
-
-@font-face {
-  font-family: "helvetica";
-  src: url(Polices/Helvetica-Neue-LT-Std-37-Thin-Condensed_22517.ttf);
 }
 
 /* --- BARRE DE NAVIGATION --- */
@@ -17,10 +12,20 @@
 }
 
 #titre {
-  font-family: "helvetica";
   text-decoration: none;
   font-size: 5rem;
   padding-left: 1rem;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: lighter;
+  color: #3d3d3d;
+  font-family: sans-serif;
+}
+
+#titre:active {
+  color: black;
 }
 
 .titre_nav {
@@ -33,6 +38,10 @@
   width: 50%;
   display: flex;
   justify-content: space-around;
+}
+
+.icones:hover {
+  text-decoration: underline;
 }
 
 .fa-cloud-sun {
@@ -78,9 +87,228 @@
 
 /* --- CONTENU CARROUSSEL PAGE METEO --- */
 
+.page_carroussel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+:root {
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
 
-/* --- CONTENU CARROUSSEL PAGE CALCULATRICE --- */
+.logo_page_meteo {
+  font-size: 12rem;
+  padding-right: 5rem;
+}
+
+.btn-valider {
+  cursor: pointer;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+/* SECTION #1
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.top-banner {
+  color: var(--text_light);
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 0.02em;
+  padding: 0 0 30px 0;
+}
+
+.top-banner form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.top-banner form input {
+  font-size: 2rem;
+  height: 40px;
+  padding: 5px 5px 10px;
+  border-bottom: 1px solid;
+}
+
+.top-banner form input::placeholder {
+  color: currentColor;
+}
+
+.top-banner form button {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: var(--red);
+  transition: background 0.3s ease-in-out;
+}
+
+.top-banner form button:hover {
+  background: var(--darkred);
+}
+
+.top-banner form .msg {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  max-width: 450px;
+  min-height: 40px;
+}
+
+/* SECTION #2
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.ajax-section {
+  margin: 70px 0 20px;
+}
+
+.ajax-section .cities {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ajax-section .city {
+  position: relative;
+  padding: 40px 10%;
+  border-radius: 20px;
+  background: var(--text_light);
+  color: var(--text_med);
+}
+
+.ajax-section .city::after {
+  content: "";
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--text_light);
+}
+
+.ajax-section figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ajax-section .city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+}
+
+.ajax-section .city sup {
+  font-size: 0.5em;
+}
+
+.ajax-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--text_light);
+  background: var(--orange);
+}
+
+.ajax-section .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* MQ
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (max-width: 1000px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .heading,
+  .ajax-section .city-temp {
+    font-size: 3rem;
+  }
+
+  .ajax-section {
+    margin-top: 20px;
+  }
+
+  .top-banner form input,
+  .top-banner form button {
+    width: 90%;
+  }
+
+  .top-banner form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-banner form button {
+    width: 60%;
+    margin: 20px 0 0 0;
+  }
+
+  .top-banner form .msg {
+    position: static;
+    max-width: none;
+    min-height: 0;
+    margin-top: 10px;
+  }
+
+  .ajax-section .cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* --- CONTENU CARROUSSEL PAGE CALCULATRICE --- 
+  __________________________________________________*/
 
 #page_calculatrice {
   display: flex;
@@ -89,8 +317,6 @@
 }
 
 #back {
-  width: 18vw;
-  height: 40vh;
   background-color: #3d3d3d;
   border-radius: 1rem;
   box-sizing: border-box;
@@ -107,6 +333,7 @@
   height: 10vh;
   background-color: white;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 #buttons_wrapper {
@@ -131,17 +358,170 @@
   background-color: #82a39b;
 }
 
-/* --- CONTENU CARROUSEL PAGE CONVERTISSEUR --- */
+/* --- CONTENU CARROUSEL PAGE CONVERTISSEUR ---
+  _______________________________________________ */
 
-/* --- CONTENU CARROUSSEL PAGE FETE --- */
+#page_convertisseur {
+  display: flex;
+  justify-content: space-around;
+}
 
-/* --- RESPONSIVE MOBILE --- */
+.converter-side {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
-@media screen and (max-width: 600px) {
+.logo_page_convertisseur {
+  font-size: 10rem;
+}
+
+.converter-wrapper {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  align-content: center;
+}
+
+.converter-wrapper input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.converter-wrapper span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.converter-wrapper span select {
+  background-color: #263648;
+  color: #fff;
+  font-size: inherit;
+  padding: 10px;
+  width: 100%;
+  border: 0;
+  -webkit-appearance: none; /* hide default arrow in chrome OSX */
+}
+
+.converter-wrapper span::before,
+.converter-wrapper span::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.converter-wrapper span::after {
+  /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: 0.625em;
+  line-height: 1;
+  right: 1.5em;
+  top: 50%;
+  margin-top: -0.5em;
+  color: #131b24;
+}
+
+.converter-wrapper span::before {
+  /*  Custom dropdown arrow cover */
+  width: 2.5em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0;
+  background-color: #202e3c;
+}
+
+.converter-side-a,
+.converter-side-b {
+  float: left;
+  margin-top: 10px;
+  box-sizing: border-box;
+  width: 45%;
+}
+
+.converter-equals {
+  float: left;
+  box-sizing: border-box;
+  width: 10%;
+  color: #fff;
+  font-size: 2.4em;
+  line-height: 0;
+  text-align: center;
+}
+
+.converter-side-a {
+  padding-right: 3rem;
+}
+
+.converter-side-b {
+  padding-left: 3rem;
+}
+
+.numbersonly {
+  background-color: white;
+  color: black;
+}
+
+/* --- CONTENU CARROUSSEL PAGE FETE --- 
+  ________________________________________*/
+
+.calendrier {
+  border-radius: 1rem;
+  box-shadow: 10px 10px 2px 1px #685e62;
+}
+
+#mois {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff1e42;
+  color: white;
+  font-size: 3rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 20vw;
+  height: 10vh;
+}
+
+#encadre_blanc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  font-size: 5rem;
+  width: 20vw;
+  height: 30vh;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.fete {
+  font-size: 3rem;
+}
+
+/* --- RESPONSIVE MOBILE --- 
+  _______________________________*/
+
+@media screen and (max-width: 800px) {
   /* --- BARRE NAVIGATION MOBILE --- */
 
-  #titre {
+  h1 {
     font-size: 2rem;
+    font-weight: lighter;
+    color: #3d3d3d;
+    font-family: sans-serif;
   }
 
   .titre_nav {
@@ -158,8 +538,39 @@
 
   /* MENU BURGER */
 
+  .menu_burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .fa-hamburger {
+    font-size: 2rem;
+    margin-top: -1rem;
+  }
   .dropdown {
     display: none;
+  }
+
+  .dropdown li {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .dropdown::after {
+    content: "";
+    display: block;
+    clear: both;
+    float: top;
+  }
+
+  .list-burger {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.2rem;
+    color: black;
+    z-index: 1000;
   }
 
   .menu-checkbox:checked ~ .dropdown {
@@ -168,7 +579,7 @@
   }
 
   #menu-checkbox {
-    position: absolute;
+    position: relative;
     top: -3000px;
   }
 
@@ -180,6 +591,16 @@
     justify-content: center;
     flex-direction: column;
     height: 70vh;
+    width: 100vw;
+  }
+
+  #accueil_1_tel {
+    word-spacing: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  #accueil_2_tel {
+    word-spacing: 5rem;
   }
 
   .fa-cloud-sun {
@@ -197,61 +618,156 @@
   .fa-calendar-alt {
     font-size: 5rem;
   }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #3d3d3d;
+    font-family: sans-serif;
+  }
+
+  /* --- PAGE METEO MOBILE --- */
+
+  .page_meteo {
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .logo_page_meteo {
+    font-size: 8rem;
+    padding-bottom: 3rem;
+    padding-right: 0;
+  }
+
+  .top-banner form input {
+    padding: 0;
+  }
+
+  .ajax-section .city-icon {
+    margin-top: 0;
+  }
+
+  .ajax-section .city {
+    margin-bottom: -2rem;
+    width: 40%;
+  }
+
+  /* --- PAGE CALCULATRICE MOBILE --- */
+
+  .page_calculatrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+  }
+
+  #back {
+    width: 56vw;
+    height: 43vh;
+    background-color: #3d3d3d;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #show {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    width: 35vw;
+    height: 10vh;
+    background-color: white;
+    font-size: 2rem;
+  }
+
+  #buttons_wrapper {
+    padding: 10px;
+  }
+
+  .numbers {
+    font-size: 20px;
+    margin: 0.2rem;
+    outline: none;
+    width: 7vw;
+    height: 4vh;
+    border-radius: 1rem;
+  }
+
+  /* --- PAGE FETE DU JOUR MOBILE --- */
+
+  .page_calendrier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .fete {
+    font-size: 2rem;
+  }
+
+  #mois {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff1e42;
+    color: white;
+    font-size: 3rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: 60vw;
+    height: 10vh;
+  }
+
+  #encadre_blanc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    font-size: 5rem;
+    width: 60vw;
+    height: 30vh;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    text-align: center;
+  }
+
+  /* PAGE CONVERTISSEUR MOBILE */
+
+  .page_convertisseur {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .logo_page_convertisseur {
+    font-size: 8rem;
+    padding-right: 0;
+    padding-bottom: 3rem;
+  }
 }
-
-/* --- PAGE METEO MOBILE --- */
-
-.page_meteo {
-  height: 100vh;
-}
-
-/* --- PAGE CALCULATRICE MOBILE --- */
-
-.page_calculatrice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 93vh;
-}
-
-#back {
-  width: 56vw;
-  height: 40vh;
-  background-color: #3d3d3d;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#show {
-  margin-top: 1rem;
-  outline: none;
-  width: 35vw;
-  height: 10vh;
-  background-color: white;
-  font-size: 2rem;
-}
-
-#buttons_wrapper {
-  padding: 10px;
-}
-
-.numbers {
-  font-size: 20px;
-  margin: 0.2rem;
-  outline: none;
-  width: 7vw;
-  height: 4vh;
-  border-radius: 1rem;
-}
-
 
 /* --- RESPONSIVE DESKTOP --- */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 800px) {
   .logo_tel {
     display: none;
   }

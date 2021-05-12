@@ -1,62 +1,83 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" integrity="sha512-r/Gan7PMSRovDus++vDS2Ayutc/cSdl268u047n4z+k7GYuR7Hiw71FsT3QQxdKJBVHYttOJ6IGLnlM9IoMToQ==" crossorigin="anonymous" />
+    <title>Les Widgets</title>
   </head>
   <body>
 
     <header>
       <nav class="nav_bar">
-        <a href="index.html" id="titre">LES WIDGETS</a>
+        <a href="index.html" id="titre"><h1>LES WIDGETS</h1></a>
 
         <div class="icones">
-          <a href="#page_meteo" class="titre_nav"
-            ><i class="fas fa-cloud-sun"></i
-          ></a>
-          <a href="#page_calculatrice" class="titre_nav"
-            ><i class="fas fa-calculator"></i
-          ></a>
-          <a href="#page_convertisseur" class="titre_nav"
-            ><i class="fas fa-balance-scale"></i
-          ></a>
-          <a href="#page_fete" class="titre_nav"
-            ><i class="fas fa-calendar-alt"></i
-          ></a>
+          <a href="#page_meteo" class="titre_nav"><i class="fas fa-cloud-sun"></i></a>
+          <a href="#page_calculatrice" class="titre_nav"><i class="fas fa-calculator"></i></a>
+          <a href="#page_convertisseur" class="titre_nav"><i class="fas fa-balance-scale"></i></a>
+          <a href="#page_fete" class="titre_nav"><i class="fas fa-calendar-alt"></i></a>
         </div>
 
         <!-- menu burger mobile-->
         <div class="menu_burger">
           <input id="menu-checkbox" type="checkbox" class="menu-checkbox" />
-          <label for="menu-checkbox" class="btn-burger"
-            ><i class="fas fa-hamburger"></i
-          ></label>
+          <label for="menu-checkbox" class="btn-burger"><i class="fas fa-hamburger"></i></label>
           <ul class="dropdown">
-            <li><a href="mobile1.html" class="list-burger">Widget météo</a></li>
-            <li><a href="mobile2.html" class="list-burger">Widget calculatrice</a></li>
-            <li><a href="mobile3.html" class="list-burger">Widget convertisseur</a></li>
-            <li><a href="mobile4.html" class="list-burger">Widget fête du jour</a></li>
+            <li><a href="mobile_meteo.html" class="list-burger">Widget météo</a></li>
+            <li><a href="mobile_calculatrice.html" class="list-burger">Widget calculatrice</a></li>
+            <li><a href="mobile_convertisseur.html" class="list-burger">Widget convertisseur</a></li>
+            <li><a href="mobile_fete.html" class="list-burger">Widget fête du jour</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
     <main>
+
+      <!-- VERSION MOBILE -->
+
+        <!-- PAGE LOGO -->
+
+      <section class="logo_tel">
+        <div id="accueil_1_tel">
+          <a href="mobile_meteo.html"><i class="fas fa-cloud-sun"></i></a>
+          <a href="mobile_calculatrice.html"><i class="fas fa-calculator"></i></a>
+        </div>
+
+        <div id="accueil_2_tel">
+          <a href="mobile_convertisseur.html"><i class="fas fa-balance-scale"></i></a>
+          <a href="mobile_fete.html"><i class="fas fa-calendar-alt"></i></a>
+        </div>
+      </section>
+
+
       <!-- VERSION DESKTOP CARROUSSEL -->
 
       <ul class="gallery">
         <!-- WIDGET METEO-->
 
-        <li class="page_carroussel" style="background: #82a39b" id="page_meteo">
-        
-        
+        <li class="page_carroussel page_carroussel_meteo" style="background: #82a39b" id="page_meteo">
+              <section class="top-banner">
+                <div class="container">
+                  <i class="fas fa-cloud-sun logo_page_meteo" style="color:black"></i>
+                  <form>
+                    <input type="text" placeholder="Ville" autofocus>
+                    <button type="submit">Valider</button>
+                    <span class="msg"></span>
+                  </form>
+                </div>
+              </section>
+              <section class="ajax-section">
+                <div class="container">
+                  <ul class="cities"></ul>
+                </div>
+              </section>
         </li>
 
         <!-- WIDGET CALCULATRICE -->
@@ -65,60 +86,91 @@
             <div id="back">
               <div class="ecran">
                 <div id="show_wrapper">
-                  <form name="cal">
-                    <input id="show" type="text" name="input" autocomplete="off"/>
-                  </form>
+                    <form name="cal">
+                      <input id="show" type="text" name="input" autocomplete="off" pattern="[^0-9]"/>
+                    </form>
                 </div>
               </div>
               <div id="buttons_wrapper">
-                <button onClick="cal.input.value+=9" class="numbers">9</button>
-                <button onClick="cal.input.value+=8" class="numbers">8</button>
-                <button onClick="cal.input.value+=7" class="numbers">7</button>
+                <button onClick="cal.input.value+=1" class="numbers">1</button>
+                <button onClick="cal.input.value+=2" class="numbers">2</button>
+                <button onClick="cal.input.value+=3" class="numbers">3</button>
                 <button onClick="cal.input.value+='+'" class="numbers btn-calcul">+</button>
                 <br />
-                <button onClick="cal.input.value+=6" class="numbers">6</button>
-                <button onClick="cal.input.value+=5" class="numbers">5</button>
                 <button onClick="cal.input.value+=4" class="numbers">4</button>
+                <button onClick="cal.input.value+=5" class="numbers">5</button>
+                <button onClick="cal.input.value+=6" class="numbers">6</button>
                 <button onClick="cal.input.value+='-'" class="numbers btn-calcul">-</button>
                 <br />
-                <button onClick="cal.input.value+=3" class="numbers">3</button>
-                <button onClick="cal.input.value+=2" class="numbers">2</button>
-                <button onClick="cal.input.value+=1" class="numbers">1</button>
+                <button onClick="cal.input.value+=7" class="numbers">7</button>
+                <button onClick="cal.input.value+=8" class="numbers">8</button>
+                <button onClick="cal.input.value+=9" class="numbers">9</button>
                 <button onClick="cal.input.value+='*'" class="numbers btn-calcul">x</button>
                 <br />
                 <button onClick="cal.input.value=''" class="numbers retour">C</button>
                 <button onClick="cal.input.value+=0" class="numbers">0</button>
                 <button id="result" class="numbers">=</button>
-                <button onClick="cal.input.value=+'/'" class="numbers btn-calcul">÷</button>
+                <button onClick="cal.input.value+='/'" class="numbers btn-calcul btn-invisible">÷</button>
               </div>
             </div>
         </li>
 
         <!-- WIDGET CONVERTISSEUR -->
 
-        <li class="page_carroussel" style="background: #d6595b" id="page_convertisseur"></li>
+        <li class="page_carroussel" style="background: #d6595b" id="page_convertisseur">
+          <i class="fas fa-balance-scale logo_page_convertisseur" style="color:black"></i>
+          
+          <div class="converter-wrapper">
+          
+            <form name="property_form">
+              <span>
+                <select class="select-property" name="the_menu" size=1
+                  onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)">
+                </select>
+              </span>
+            </form>
+
+          <section class="converter-side">
+            <div class="converter-side-a"> <!-- converter-side-a -->
+              <form name="form_A" onSubmit="return false">
+                <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0"
+                  onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+                <span>
+                  <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)">
+                  </select>
+                </span>
+              </form>
+            </div>
+
+            <div class="converter-side-b"> <!-- converter-side-b -->
+              <form name="form_B" onSubmit="return false">
+                <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onkeyup="CalculateUnit(document.form_B, document.form_A)">
+                  <span>
+                    <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)"></select>
+                  </span>
+                </form>
+              </div>
+            </section>
+          </div>
+        </li>
 
         <!-- WIDGET FETE -->
 
-        <li class="page_carroussel" style="background: #d6b79a" id="page_fete"></li>
+        <li class="page_carroussel page_calendrier" style="background: #d6b79a" id="page_fete">
+            <section class="calendrier">
+            <p id="mois"></p>
+            <div id="encadre_blanc">
+              <span id="jour"></span>
+              <span class="fete" style="color:black">
+                <script src="http://www.net-pratique.fr/services/saintdujour.php"></script>
+              </span>
+            </div>
+          </section> 
+        </li>
       </ul>
-
-      <!-- VERSION MOBILE -->
-
-      <!-- PAGE LOGO -->
-      <section class="logo_tel">
-        <div id="accueil_1_tel">
-          <a href="mobile1.html"><i class="fas fa-cloud-sun"></i></a>
-          <a href="mobile2.html"><i class="fas fa-calculator"></i></a>
-        </div>
-
-        <div id="accueil_2_tel">
-          <a href="mobile3.html"><i class="fas fa-balance-scale"></i></a>
-          <a href="mobile4.html"><i class="fas fa-calendar-alt"></i></a>
-        </div>
-      </section>
+      
     </main>
 
-    <script type="text/Javascript" src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

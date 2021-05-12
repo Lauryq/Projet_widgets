@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Les Widgets/fête</title>
+</head>
+<body>
+
+    <header>
+        <nav class="nav_bar">
+            <a href="index.html" id="titre"><h1>LES WIDGETS</h1></a>
+            <div class="menu_burger">
+                <input id="menu-checkbox" type="checkbox" class="menu-checkbox" />
+                <label for="menu-checkbox" class="btn-burger"><i class="fas fa-hamburger"></i></label>
+                <ul class="dropdown">
+                    <li><a href="mobile_meteo.html" class="list-burger">Widget météo</a></li>
+                    <li><a href="mobile_calculatrice.html" class="list-burger">Widget calculatrice</a></li>
+                    <li><a href="mobile_convertisseur.html" class="list-burger">Widget convertisseur</a></li>
+                    <li><a href="mobile_fete.html" class="list-burger">Widget fête du jour</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <section class="page_calendrier" style="background: #d6b79a">
+        <section class="calendrier">
+            <p id="mois"></p>
+            <div id="encadre_blanc">
+                <span id="jour"></span>
+                <span class="fete" style="color:black">
+                    <script type="text/javascript" src="http://www.net-pratique.fr/services/saintdujour.php"></script>
+                </span>
+            </div>
+        </section>
+    </section>
+        
+   <script src="script_fete.js"></script>
+</body>
+</html>

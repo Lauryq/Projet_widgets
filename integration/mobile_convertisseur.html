@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Les Widgets/convertisseur</title>
+</head>
+<body>
+
+    <!-- BARRE DE NAVIGATION / MENU BURGER -->
+
+    <header>
+        <nav class="nav_bar">
+            <a href="index.html" id="titre"><h1>LES WIDGETS</h1></a>
+            <div class="menu_burger">
+                <input id="menu-checkbox" type="checkbox" class="menu-checkbox" />
+                <label for="menu-checkbox" class="btn-burger"><i class="fas fa-hamburger"></i></label>
+                <ul class="dropdown">
+                    <li><a href="mobile_meteo.html" class="list-burger">Widget météo</a></li>
+                    <li><a href="mobile_calculatrice.html" class="list-burger">Widget calculatrice</a></li>
+                    <li><a href="mobile_convertisseur.html" class="list-burger">Widget convertisseur</a></li>
+                    <li><a href="mobile_fete.html" class="list-burger">Widget fête du jour</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- CORPS DE LA PAGE -->
+
+    <section class="page_convertisseur" style="background: #d6595b">
+        <i class="fas fa-balance-scale logo_page_convertisseur" style="color:black"></i>
+        <div class="converter-wrapper">
+    
+            <form name="property_form">
+                <span>
+                    <select class="select-property" name="the_menu" size=1 onChange="UpdateUnitMenu(this, document.form_A.unit_menu); UpdateUnitMenu(this, document.form_B.unit_menu)"></select>
+                </span>
+            </form>
+    
+            <div class="converter-side-a">
+                <form name="form_A" onSubmit="return false">
+                    <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onKeyUp="CalculateUnit(document.form_A, document.form_B)">
+                    <span>
+                        <select name="unit_menu" onChange="CalculateUnit(document.form_B, document.form_A)"></select>
+                    </span>
+                </form>
+            </div> <!-- /converter-side-a -->
+    
+         <!-- /converter-side-a -->
+    
+            <div class="converter-side-b">
+                <form name="form_B" onSubmit="return false">
+                    <input type="text" class="numbersonly" name="unit_input" maxlength="20" value="0" onkeyup="CalculateUnit(document.form_B, document.form_A)">
+                    <span>
+                        <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_B)"></select>
+                    </span>
+                </form>
+            </div> <!-- /converter-side-b -->
+        </div><!-- /converter-wrapper -->
+    </section>
+
+   <script src="script_convertisseur.js"></script>
+</body>
+</html>
