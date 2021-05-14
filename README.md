@@ -1,5 +1,5 @@
 # Projet_widgets
-Projet pour l'ACS, première utilisation API (projet en cours)
+Projet pour l'ACS, première utilisation API (projet terminé)
 
 ## Description  
 Consignes du projet : 
